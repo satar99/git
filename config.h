@@ -532,16 +532,10 @@ void git_config_clear(void);
  * error message and returns -1. When the configuration variable `key` is
  * not found, returns 1 without touching `dest`.
  */
-int git_config_get_string_const(const char *key, const char **dest);
-
-/**
- * Similar to `git_config_get_string_const`, except that retrieved value
- * copied into the `dest` parameter is a mutable string.
- */
 int git_config_get_string(const char *key, char **dest);
 
 /**
- * Similar to `git_config_get_string_const`, but does not allocate any new
+ * Similar to `git_config_get_string`, but does not allocate any new
  * memory; on success `dest` will point to memory owned by the config
  * machinery, which could be invalidated if it is discarded and reloaded.
  */
