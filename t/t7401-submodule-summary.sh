@@ -10,6 +10,11 @@ This test script tries to verify the sanity of summary subcommand of git submodu
 # NEEDSWORK: This test script is old fashioned and may need a big cleanup since
 # there are lots of commands taking place outside of 'test_expect_success'
 # block, which is no longer in good-style.
+#
+# NOTE: This test script uses 'git add' instead of 'git submodule add' to add
+# submodules to the superproject. Some submodule subcommands such as init and
+# deinit might not work as expected in this script. t7421 does not have this
+# caveat.
 
 . ./test-lib.sh
 
